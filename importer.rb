@@ -34,6 +34,9 @@ class Importer
           returning
         end
       end.transpose.map(&:flatten)
+    rescue
+      puts "Failed to import #{url}"
+      []
     end
 
     def subjects
