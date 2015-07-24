@@ -51,7 +51,7 @@ class Importer
     end
 
     def write_to_file(data)
-      CSV.open(@write_to, "w") do |csv|
+      CSV.open(@write_to, "a") do |csv|
         data.each{ |row| csv << row }
       end
     end
