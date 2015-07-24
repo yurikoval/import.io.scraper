@@ -1,0 +1,113 @@
+{
+    "extraction": {
+        "resultPipeline": [
+            {
+                "configuration": {
+                    "property": "size",
+                    "xpaths": [
+                        ".//tr[not(@id)][not(@class)][not(@style)]/td[3][not(@id)][not(@style)][contains(concat(' ',normalize-space(@class),' '),\" detailbox-property-col detailbox-property--col3 \")]/div[2][not(@id)][not(@class)][not(@style)]"
+                    ]
+                }
+            },
+            {
+                "configuration": {
+                    "property": "price",
+                    "xpaths": [
+                        ".//div[not(@id)][not(@style)][contains(concat(' ',normalize-space(@class),' '),\" detailbox-property-point \")]"
+                    ]
+                }
+            },
+            {
+                "configuration": {
+                    "property": "maintenance_fee",
+                    "xpaths": [
+                        ".//td[not(@id)][not(@style)][contains(concat(' ',normalize-space(@class),' '),\" detailbox-property-col detailbox-property--col1 \")]/div[2][not(@id)][not(@class)][not(@style)]"
+                    ]
+                }
+            },
+            {
+                "configuration": {
+                    "property": "deposit",
+                    "xpaths": [
+                        ".//td[not(@id)][not(@style)][contains(concat(' ',normalize-space(@class),' '),\" detailbox-property-col detailbox-property--col2 \")]/div[1][not(@id)][not(@class)][not(@style)]"
+                    ]
+                }
+            },
+            {
+                "configuration": {
+                    "property": "key_money",
+                    "xpaths": [
+                        ".//td[not(@id)][not(@style)][contains(concat(' ',normalize-space(@class),' '),\" detailbox-property-col detailbox-property--col2 \")]/div[2][not(@id)][not(@class)][not(@style)]"
+                    ]
+                }
+            },
+            {
+                "configuration": {
+                    "property": "etc_fees",
+                    "xpaths": [
+                        ".//td[not(@id)][not(@style)][contains(concat(' ',normalize-space(@class),' '),\" detailbox-property-col detailbox-property--col2 \")]/div[4][not(@id)][not(@style)][contains(concat(' ',normalize-space(@class),' '),\" detailbox-property-inactive \")]"
+                    ]
+                }
+            },
+            {
+                "configuration": {
+                    "property": "how_old",
+                    "xpaths": [
+                        ".//tr[not(@id)][not(@class)][not(@style)]/td[4][not(@id)][not(@style)][contains(concat(' ',normalize-space(@class),' '),\" detailbox-property-col detailbox-property--col3 \")]/div[2][not(@id)][not(@class)][not(@style)]"
+                    ]
+                }
+            },
+            {
+                "configuration": {
+                    "type": "URL",
+                    "property": "name",
+                    "xpaths": [
+                        ".//a[not(@id)][not(@style)][contains(concat(' ',normalize-space(@class),' '),\" js-cassetLinkHref \")]"
+                    ]
+                }
+            },
+            {
+                "configuration": {
+                    "property": "room_type",
+                    "xpaths": [
+                        ".//tr[not(@id)][not(@class)][not(@style)]/td[3][not(@id)][not(@style)][contains(concat(' ',normalize-space(@class),' '),\" detailbox-property-col detailbox-property--col3 \")]/div[1][not(@id)][not(@class)][not(@style)]"
+                    ]
+                }
+            },
+            {
+                "configuration": {
+                    "property": "direction",
+                    "xpaths": [
+                        ".//td[not(@id)][not(@style)][contains(concat(' ',normalize-space(@class),' '),\" detailbox-property-col detailbox-property--col3 \")]/div[3][not(@id)][not(@class)][not(@style)]"
+                    ]
+                }
+            },
+            {
+                "configuration": {
+                    "property": "bldg_type",
+                    "xpaths": [
+                        ".//tr[not(@id)][not(@class)][not(@style)]/td[4][not(@id)][not(@style)][contains(concat(' ',normalize-space(@class),' '),\" detailbox-property-col detailbox-property--col3 \")]/div[1][not(@id)][not(@class)][not(@style)]"
+                    ]
+                }
+            },
+            {
+                "configuration": {
+                    "property": "insurance",
+                    "xpaths": [
+                        ".//td[not(@id)][not(@style)][contains(concat(' ',normalize-space(@class),' '),\" detailbox-property-col detailbox-property--col2 \")]/div[3][not(@id)][not(@style)][contains(concat(' ',normalize-space(@class),' '),\" detailbox-property-inactive \")]"
+                    ]
+                }
+            }
+        ],
+        "resultXPaths": [
+            "//div[not(@id)][not(@style)][contains(concat(' ',normalize-space(@class),' '),\" wrapper \")]/div[1][not(@id)][not(@style)][contains(concat(' ',normalize-space(@class),' '),\" ui-section--h1 \")]/div[2][not(@id)][not(@style)][contains(concat(' ',normalize-space(@class),' '),\" ui-section-body \")]/div[2][not(@id)][not(@style)][contains(concat(' ',normalize-space(@class),' '),\" contents contents--type2 \")]/div[1][not(@id)][not(@style)][contains(concat(' ',normalize-space(@class),' '),\" main \")]/form[4][not(@class)][not(@style)][@id=\"js-leftColumnForm\"]/div[5][not(@class)][not(@style)][@id=\"js-bukkenList\"]/div[not(@style)][contains(concat(' ',normalize-space(@class),' '),\" property_group \")]/div[not(@style)][(contains(concat(' ',normalize-space(@class),' '),\" property \") and contains(concat(' ',normalize-space(@class),' '),\" js-cassetLink \") and contains(concat(' ',normalize-space(@class),' '),\" js-property \"))]|//div[not(@class)][not(@style)][@id=\"js-bukkenList\"]/div[1][not(@style)][contains(concat(' ',normalize-space(@class),' '),\" property_group \")]/div[2][not(@style)][contains(concat(' ',normalize-space(@class),' '),\" property property--highlight js-property js-cassetLink \")]"
+        ]
+    },
+    "playback": {
+        "fixHtml": true,
+        "url": "${webpage/url}"
+    },
+    "urlProperties": [
+        "name"
+    ]
+}
