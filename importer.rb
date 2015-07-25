@@ -27,16 +27,20 @@ class Importer
     def extract_data(url)
       puts "Fetching #{url}"
       doc = Nokogiri::HTML(open(url))
-      subjects.map do |subject|
-        doc.xpath(subject[:xpath]).map do |link|
-          returning = [link.content]
-          returning << link.attributes['href'].value if subject[:type] == 'URL'
-          returning
-        end
-      end.transpose.map(&:flatten)
-    rescue
-      puts "Failed to import #{url}"
-      []
+      doc.xpath(@config['extraction']['resultXPaths'].first).map.with_index(1) do |result, i|
+        subjects.map do |subject|
+          if match = result.xpath(subject[:xpath]).first
+            returning = [match.content]
+            if subject[:type] == 'URL'
+              returning << match.attributes['href'].value rescue ''
+            end
+            returning
+          else
+            puts "No match found for `#{subject[:property]}` on item #{i} on #{url}"
+            ['']
+          end
+        end.flatten
+      end
     end
 
     def subjects
