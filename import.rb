@@ -34,7 +34,7 @@ what_to_scrape = [
 
 what_to_scrape.each do |subject|
   start_at = subject[:start_at] || 1
-  url_set = ((start_at)...(subject[:pages])).map{ |num| "#{subject[:url]}#{num}" }
+  url_set = ((start_at)..(subject[:pages])).map{ |num| "#{subject[:url]}#{num}" }
   date = Time.new().strftime('%Y-%m-%d')
   Importer.scrape config: config, url_set: url_set, write_to: "export_#{subject[:name]}_#{date}.csv"
 end
